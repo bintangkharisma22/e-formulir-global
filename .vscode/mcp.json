@@ -1,0 +1,24 @@
+{
+	"inputs": [
+		// The "inputs" section defines the inputs required for the MCP server configuration.
+		{
+			"type": "promptString"
+		}
+	],
+	"servers": {
+		// The "servers" section defines the MCP servers you want to use.
+		"FigmaBakso": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"figma-developer-mcp",
+				"--figma-api-key=",
+				"--stdio"
+			]
+		},
+		"fetch": {
+			"command": "uvx",
+			"args": ["mcp-server-fetch"]
+		}
+	}
+}

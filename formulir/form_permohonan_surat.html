@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Permohonan Surat</title>
+    <link rel="stylesheet" href="../css/form_permohonan_surat.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="page-content">
+        <!-- Fixed Navbar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="../images/logo-global-institute-type3-stroke.png" alt="GITB Logo" class="logo-img">
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="../halamanutama.html" class="nav-item">Beranda</a>
+                    
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown" id="formulirDropdown">
+                        <a href="#" class="dropdown-toggle">
+                            Formulir
+                            <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="form_permohonan_surat.html" class="dropdown-item active">Formulir Permohonan Surat</a>
+                            <a href="form_cuti_kuliah.html" class="dropdown-item">Formulir Cuti Kuliah</a>
+                            <a href="form_perpindahan_kelas.html" class="dropdown-item">Formulir Perpindahan Kelas</a>
+                            <a href="form_perpindahan_konsentrasi.html" class="dropdown-item">Formulir Perpindahan Konsentrasi</a>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="nav-item">Bantuan</a>
+                    <a href="#" class="nav-item">Logout</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <div class="form-card">
+                <!-- Form Header -->
+                <div class="form-header">
+                    <div class="institute-name">FORMULIR PERMOHONAN SURAT</div>
+                </div>
+
+                <!-- Form Body -->
+                <div class="form-body">
+                    <form id="permohonanForm" method="POST" action="process_form.php">
+                        <!-- Basic Information - All Vertical Layout -->
+                        <div class="form-row vertical">
+                            <label class="form-label">Nama</label>
+                            <input type="text" class="form-input" name="nama" required placeholder="Masukkan nama lengkap">
+                        </div>
+
+                        <div class="form-row vertical">
+                            <label class="form-label">NIM</label>
+                            <input type="text" class="form-input" name="nim" required placeholder="Masukkan NIM">
+                        </div>
+
+                        <div class="form-row vertical">
+                            <label class="form-label">Tempat Tanggal Lahir</label>
+                            <input type="text" class="form-input" name="tempat_tanggal_lahir" required placeholder="Contoh: Jakarta, 01 Januari 1990">
+                        </div>
+
+                        <!-- Program Studi Dropdown - Vertical Layout -->
+                        <div class="form-row vertical">
+                            <label class="form-label">Program Studi</label>
+                            <select class="form-select" name="program_studi" required>
+                                <option value="">Pilih Program Studi</option>
+                                <option value="Teknik Informatika">Teknik Informatika</option>
+                                <option value="Sistem Informasi">Sistem Informasi</option>
+                                <option value="Bisnis Digital">Bisnis Digital</option>
+                            </select>
+                        </div>
+
+                        <!-- Konsentrasi Dropdown - Vertical Layout -->
+                        <div class="form-row vertical">
+                            <label class="form-label">Konsentrasi</label>
+                            <select class="form-select" name="konsentrasi" required>
+                                <option value="">Pilih Konsentrasi</option>
+                                <option value="SE">SE (Software Engineering)</option>
+                                <option value="CIA">CIA (Cyber Intelligence & Analytics)</option>
+                                <option value="Manajemen">Manajemen (Bitel)</option>
+                                <option value="COM">COM (Computer Network)</option>
+                                <option value="CN">CN (Computer Network)</option>
+                                <option value="SIM">SIM (Sistem Informasi Manajemen)</option>
+                            </select>
+                        </div>
+
+                        <!-- Jenis Surat Dropdown - Vertical Layout -->
+                        <div class="form-row vertical">
+                            <label class="form-label">Mohon untuk dibuatkan</label>
+                            <select class="form-select" name="jenis_surat" required>
+                                <option value="">Pilih Jenis Surat</option>
+                                <option value="Surat Keterangan Mahasiswa Aktif">Surat Keterangan Mahasiswa Aktif</option>
+                                <option value="Jadwal Registrasi Perkuliahan">Jadwal Registrasi Perkuliahan</option>
+                                <option value="Surat Izin Ujian">Surat Izin Ujian</option>
+                                <option value="Surat Lain-lain">Surat Lain-lain</option>
+                            </select>
+                        </div>
+
+                        <!-- Additional Details -->
+                        <div class="form-row vertical">
+                            <label class="form-label">Judul:</label>
+                            <textarea class="form-textarea" name="judul" placeholder="Jelaskan judul atau keterangan tambahan jika memilih 'Surat Lain-lain'"></textarea>
+                        </div>
+
+                        <!-- Address Section -->
+                        <div class="address-section">
+                            <div class="address-title">Surat di tujukan</div>
+                            
+                            <div class="form-row vertical">
+                                <label class="form-label">Kepada Yth</label>
+                                <input type="text" class="form-input" name="kepada_yth" placeholder="Nama penerima surat">
+                            </div>
+
+                            <div class="form-row vertical">
+                                <label class="form-label">Jabatan</label>
+                                <input type="text" class="form-input" name="jabatan" placeholder="Jabatan penerima">
+                            </div>
+
+                            <div class="form-row vertical">
+                                <label class="form-label">Instansi</label>
+                                <input type="text" class="form-input" name="instansi" placeholder="Nama instansi/perusahaan">
+                            </div>
+
+                            <div class="form-row vertical">
+                                <label class="form-label">Alamat</label>
+                                <textarea class="form-input" name="alamat" style="min-height: 80px;" placeholder="Alamat lengkap penerima surat"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Signature Section -->
+                        <div class="signature-section">
+                            <div class="signature-left">
+                                <p>Tangerang, ________________</p>
+                                <p style="margin-top: 1rem;">Pemohon,</p>
+                            </div>
+                            <div class="signature-right">
+                                <div class="signature-line"></div>
+                                <p>(________________________________)</p>
+                            </div>
+                        </div>
+
+                        <!-- Submit Section -->
+                        <div class="submit-section">
+                            <button type="button" class="back-btn" onclick="goBack()">Kembali</button>
+                            <button type="submit" class="submit-btn">Print</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Dropdown Toggle
+        const formulirDropdown = document.getElementById('formulirDropdown');
+        const dropdownToggle = formulirDropdown.querySelector('.dropdown-toggle');
+
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            formulirDropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!formulirDropdown.contains(event.target)) {
+                formulirDropdown.classList.remove('active');
+            }
+            
+            if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Form validation and submission - Basic frontend validation only
+        document.getElementById('permohonanForm').addEventListener('submit', function(e) {
+            // Show loading
+            document.getElementById('loading').style.display = 'flex';
+            
+            // Basic validation - let PHP handle the rest
+            const nama = this.nama.value.trim();
+            const nim = this.nim.value.trim();
+            const ttl = this.tempat_tanggal_lahir.value.trim();
+            const programStudi = this.program_studi.value;
+            const konsentrasi = this.konsentrasi.value;
+            const jenisSurat = this.jenis_surat.value;
+            
+            if (!nama || !nim || !ttl || !programStudi || !konsentrasi || !jenisSurat) {
+                e.preventDefault();
+                setTimeout(() => {
+                    document.getElementById('loading').style.display = 'none';
+                    alert('Mohon lengkapi semua field yang wajib diisi!');
+                }, 500);
+                return false;
+            }
+
+            // Check if "Surat Lain-lain" is selected and judul is empty
+            const judul = this.judul.value.trim();
+            if (jenisSurat === 'Surat Lain-lain' && !judul) {
+                e.preventDefault();
+                setTimeout(() => {
+                    document.getElementById('loading').style.display = 'none';
+                    alert('Mohon isi judul karena Anda memilih "Surat Lain-lain"!');
+                }, 500);
+                return false;
+            }
+
+            // If validation passes, form will submit to PHP
+            // Remove loading after a short delay to show user feedback
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+            }, 1000);
+        });
+
+        // Go back function
+        function goBack() {
+            if (confirm('Apakah Anda yakin ingin kembali? Data yang telah diisi akan hilang.')) {
+                // Try to go back in history, if no history go to homepage
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    window.location.href = 'halamanutama.html';
+                }
+            }
+        }
+
+        // Auto-format NIM (only numbers)
+        document.querySelector('input[name="nim"]').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+
+        // Auto-format name (capitalize first letter of each word)
+        document.querySelector('input[name="nama"]').addEventListener('blur', function(e) {
+            this.value = this.value.replace(/\b\w/g, l => l.toUpperCase());
+        });
+
+        // Handle jenis surat selection and judul field requirement
+        document.querySelector('select[name="jenis_surat"]').addEventListener('change', function() {
+            const judulTextarea = document.querySelector('textarea[name="judul"]');
+            const selectedValue = this.value;
+            
+            if (selectedValue === 'Surat Lain-lain') {
+                judulTextarea.required = true;
+                judulTextarea.placeholder = 'Mohon jelaskan jenis surat yang dibutuhkan (WAJIB DIISI)';
+                judulTextarea.style.borderColor = '#e74c3c';
+            } else {
+                judulTextarea.required = false;
+                judulTextarea.placeholder = 'Jelaskan judul atau keterangan tambahan jika memilih "Surat Lain-lain"';
+                judulTextarea.style.borderColor = '#e0e6ed';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                }
+                // Close mobile menu
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Input focus animations
+        document.querySelectorAll('.form-input, .form-textarea, .form-select').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.transform = 'scale(1.02)';
+                this.style.boxShadow = '0 5px 15px rgba(52, 152, 219, 0.2)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Update konsentrasi options based on program studi selection
+        document.querySelector('select[name="program_studi"]').addEventListener('change', function() {
+            const konsentrasiSelect = document.querySelector('select[name="konsentrasi"]');
+            const selectedProgram = this.value;
+            
+            // Clear current options
+            konsentrasiSelect.innerHTML = '<option value="">Pilih Konsentrasi</option>';
+            
+            // Define konsentrasi options for each program
+            const konsentrasiOptions = {
+                'Teknik Informatika': [
+                    {value: 'SE', text: 'SE (Software Engineering)'},
+                    {value: 'CN', text: 'CN (Computer Network)'},
+                    {value: 'COM', text: 'COM (Computer Network)'}
+                ],
+                'Sistem Informasi': [
+                    {value: 'SIM', text: 'SIM (Sistem Informasi Manajemen)'},
+                    {value: 'CIA', text: 'CIA (Cyber Intelligence & Analytics)'}
+                ],
+                'Bisnis Digital': [
+                    {value: 'Manajemen', text: 'Manajemen (Bitel)'}
+                ]
+            };
+            
+            // Add relevant options based on selected program
+            if (selectedProgram && konsentrasiOptions[selectedProgram]) {
+                konsentrasiOptions[selectedProgram].forEach(option => {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = option.value;
+                    optionElement.textContent = option.text;
+                    konsentrasiSelect.appendChild(optionElement);
+                });
+            }
+        });
+
+        // Add visual feedback for select dropdowns
+        document.querySelectorAll('select.form-select').forEach(select => {
+            select.addEventListener('change', function() {
+                const label = this.closest('.form-row').querySelector('.form-label');
+                
+                if (this.value) {
+                    this.style.borderColor = '#27ae60';
+                    if (label) {
+                        label.style.color = '#27ae60';
+                    }
+                } else {
+                    this.style.borderColor = '#e0e6ed';
+                    if (label) {
+                        label.style.color = '#2c3e50';
+                    }
+                }
+            });
+        });
+
+        // Print form function (optional)
+        function printForm() {
+            window.print();
+        }
+
+        // Initialize form on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default focus to first input
+            document.querySelector('input[name="nama"]').focus();
+            
+            // Add loading animation for better UX
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

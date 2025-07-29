@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Akademik Global Institute</title>
+    <link rel="stylesheet" href="css/halamanutama.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="page-content">
+        <!-- Fixed Navbar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/logo-global-institute-type3-stroke.png" alt="GITB Logo" class="logo-img">
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="#" class="nav-item active">Beranda</a>
+                    
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown" id="formulirDropdown">
+                        <a href="#" class="dropdown-toggle">
+                            Formulir
+                            <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="formulir/form_permohonan_surat.html" class="dropdown-item" data-form="permohonan-surat">Formulir Permohonan Surat</a>
+                            <a href="formulir/form_cuti_kuliah.html" class="dropdown-item" data-form="cuti-kuliah">Formulir Cuti Kuliah</a>
+                            <a href="formulir/form_perpindahan_kelas.html" class="dropdown-item" data-form="perpindahan-kelas">Formulir Perpindahan Kelas</a>
+                            <a href="form_perpindahan_konsentrasi.html" class="dropdown-item" data-form="perpindahan-konsentrasi">Formulir Perpindahan Konsentrasi</a>
+                        </div>
+                    </div>
+                
+                    <a href="#" class="nav-item">Bantuan</a>
+                    <a href="#" class="nav-item">Logout</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">Portal Akademik<br>Global Institute of Technology & Business</h1>
+            <p class="hero-subtitle">Sistem Informasi Akademik Terpadu</p>
+            <p class="hero-description">
+                Selamat datang di Portal Akademik Global Institute of Technology & Business. 
+                Platform digital yang memudahkan mahasiswa dalam mengurus berbagai keperluan administratif akademik secara online, cepat, dan efisien.
+            </p>
+        </section>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Info Cards -->
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">🎓</div>
+                    <h3 class="info-card-title">Layanan Akademik</h3>
+                    <p class="info-card-description">
+                        Akses mudah untuk berbagai layanan akademik seperti permohonan surat keterangan, 
+                        cuti kuliah, dan perpindahan kelas atau konsentrasi.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">⚡</div>
+                    <h3 class="info-card-title">Proses Cepat</h3>
+                    <p class="info-card-description">
+                        Sistem otomatis yang memproses pengajuan Anda dengan cepat. 
+                    </p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">📱</div>
+                    <h3 class="info-card-title">Akses 24/7</h3>
+                    <p class="info-card-description">
+                        Platform dapat diakses kapan saja dan dimana saja melalui komputer, 
+                        tablet, atau smartphone Anda.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Formulir Section -->
+            <section class="formulir-section">
+                <h2 class="section-title">Pilih Formulir</h2>
+                <p class="section-subtitle">Pilih jenis formulir yang sesuai dengan keperluan Anda</p>
+                
+                <div class="formulir-grid">
+                    <div class="formulir-card" data-form="permohonan-surat">
+                        <div class="formulir-icon">📄</div>
+                        <h3 class="formulir-title">Permohonan Surat</h3>
+                        <p class="formulir-description">
+                            Untuk mengajukan surat keterangan mahasiswa aktif, 
+                            surat rekomendasi, dan surat akademik lainnya.
+                        </p>
+                        <a href="formulir/form_permohonan_surat.html" style="text-decoration: none;">
+                            <button class="formulir-btn">Pilih Formulir</button>
+                        </a>
+                    </div>
+
+                    <div class="formulir-card" data-form="cuti-kuliah">
+                        <div class="formulir-icon">⏸️</div>
+                        <h3 class="formulir-title">Cuti Kuliah</h3>
+                        <p class="formulir-description">
+                            Untuk mengajukan permohonan cuti kuliah sementara 
+                            dengan alasan tertentu yang dibenarkan institusi.
+                        </p>
+                        <a href="formulir/form_cuti_kuliah.html" style="text-decoration: none;">
+                            <button class="formulir-btn">Pilih Formulir</button>
+                        </a>
+                    </div>
+
+                    <div class="formulir-card" data-form="perpindahan-kelas">
+                        <div class="formulir-icon">🔄</div>
+                        <h3 class="formulir-title">Perpindahan Kelas</h3>
+                        <p class="formulir-description">
+                            Untuk mengajukan perpindahan dari kelas reguler ke kelas karyawan 
+                            atau sebaliknya sesuai kebutuhan.
+                        </p>
+                        <a href="formulir/form_perpindahan_kelas.html" style="text-decoration: none;">
+                            <button class="formulir-btn">Pilih Formulir</button>
+                        </a>
+                    </div>
+
+                    <div class="formulir-card" data-form="perpindahan-konsentrasi">
+                        <div class="formulir-icon">🎯</div>
+                        <h3 class="formulir-title">Perpindahan Konsentrasi</h3>
+                        <p class="formulir-description">
+                            Untuk mengajukan perpindahan konsentrasi atau peminatan 
+                            dalam program studi yang sama.
+                        </p>
+                        <a href="form_perpindahan_konsentrasi.html" style="text-decoration: none;">
+                            <button class="formulir-btn">Pilih Formulir</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2025 Global Institute of Technology & Business. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Dropdown Toggle
+        const formulirDropdown = document.getElementById('formulirDropdown');
+        const dropdownToggle = formulirDropdown.querySelector('.dropdown-toggle');
+
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            formulirDropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!formulirDropdown.contains(event.target)) {
+                formulirDropdown.classList.remove('active');
+            }
+            
+            if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Formulir Card Click Handler
+        const formulirCards = document.querySelectorAll('.formulir-card');
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+        function handleFormSelection(formType) {
+            // Close mobile menu and dropdown
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            formulirDropdown.classList.remove('active');
+
+            // Show selection confirmation
+            const formNames = {
+                'permohonan-surat': 'Formulir Permohonan Surat',
+                'cuti-kuliah': 'Formulir Cuti Kuliah',
+                'perpindahan-kelas': 'Formulir Perpindahan Kelas',
+                'perpindahan-konsentrasi': 'Formulir Perpindahan Konsentrasi'
+            };
+
+            // Use confirm dialog instead of alert for better UX
+            const userConfirmed = confirm(`Anda memilih: ${formNames[formType]}\n\nAnda akan diarahkan ke halaman formulir...`);
+            
+            if (userConfirmed) {
+                // Redirect to the appropriate form page
+                const formPages = {
+                    'permohonan-surat': 'form_permohonan_surat.html',
+                    'cuti-kuliah': 'form_cuti_kuliah.html',
+                    'perpindahan-kelas': 'form_perpindahan_kelas.html',
+                    'perpindahan-konsentrasi': 'form_perpindahan_konsentrasi.html'
+                };
+                
+                // Add loading effect before redirect
+                document.body.style.cursor = 'wait';
+                
+                // Redirect to the form page
+                setTimeout(() => {
+                    window.location.href = formPages[formType];
+                }, 300);
+            }
+        }
+
+        // Add click handlers to formulir cards
+        formulirCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const formType = this.getAttribute('data-form');
+                handleFormSelection(formType);
+            });
+        });
+
+        // Add click handlers to dropdown items (for confirmation dialog)
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const formType = this.getAttribute('data-form');
+                const formNames = {
+                    'permohonan-surat': 'Formulir Permohonan Surat',
+                    'cuti-kuliah': 'Formulir Cuti Kuliah',
+                    'perpindahan-kelas': 'Formulir Perpindahan Kelas',
+                    'perpindahan-konsentrasi': 'Formulir Perpindahan Konsentrasi'
+                };
+                
+                const userConfirmed = confirm(`Anda akan mengisi: ${formNames[formType]}\n\nLanjutkan ke halaman formulir?`);
+                
+                if (userConfirmed) {
+                    // Get the href from the link
+                    window.location.href = this.getAttribute('href');
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                }
+                // Close mobile menu
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe animated elements
+        document.querySelectorAll('.info-card, .formulir-card, .feature-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

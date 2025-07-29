@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Cuti Kuliah</title>
+    <link rel="stylesheet" href="../css/form_cuti_kuliah.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="page-content">
+        <!-- Fixed Navbar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="../images/logo-global-institute-type3-stroke.png" alt="GITB Logo" class="logo-img">
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="../halamanutama.html" class="nav-item">Beranda</a>
+                    
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown" id="formulirDropdown">
+                        <a href="#" class="dropdown-toggle">
+                            Formulir
+                            <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="form_permohonan_surat.html" class="dropdown-item">Formulir Permohonan Surat</a>
+                            <a href="formulir_cuti_kuliah.html" class="dropdown-item active">Formulir Cuti Kuliah</a>
+                            <a href="form_perpindahan_kelas.html" class="dropdown-item">Formulir Perpindahan Kelas</a>
+                            <a href="form_perpindahan_konsentrasi.html" class="dropdown-item">Formulir Perpindahan Konsentrasi</a>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="nav-item">Bantuan</a>
+                    <a href="#" class="nav-item">Logout</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <div class="form-card">
+                <!-- Form Header -->
+                <div class="form-header">
+                    <div class="header-content">
+                        <div class="institute-name">FORMULIR CUTI KULIAH</div>
+                        <div class="form-meta">
+                            <div class="meta-row">
+                                <span>Tanggal Revisi:</span> -
+                            </div>
+                            <div class="meta-row">
+                                <span>Tanggal Berlaku:</span> -
+                            </div>
+                            <div class="meta-row">
+                                <span>Kode Dokumen:</span> FM-BAAK-001
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Body -->
+                <div class="form-body">
+                    <div class="form-intro">
+                        Saya yang bertanda tangan di bawah ini:
+                    </div>
+
+                    <form id="cutiKuliahForm" method="POST" action="process_cuti_kuliah.php">
+                        <!-- Basic Information -->
+                        <div class="form-row vertical">
+                            <label class="form-label">NIM</label>
+                            <input type="text" class="form-input underline" name="nim" required placeholder="Masukkan NIM">
+                        </div>
+
+                        <div class="form-row vertical">
+                            <label class="form-label">Nama Mahasiswa</label>
+                            <input type="text" class="form-input underline" name="nama_mahasiswa" required placeholder="Masukkan nama lengkap">
+                        </div>
+
+                        <div class="form-row vertical">
+                            <label class="form-label">Semester</label>
+                            <input type="number" class="form-input underline" name="semester" min="1" max="14" required placeholder="Masukkan semester">
+                        </div>
+
+                        <div class="form-row vertical">
+                            <label class="form-label">Jumlah sks terjangkau</label>
+                            <input type="number" class="form-input underline" name="sks_terjangkau" min="0" max="24" required placeholder="Masukkan jumlah SKS">
+                        </div>
+
+                        <!-- Program Studi Checkbox -->
+                        <div class="form-row vertical">
+                            <label class="form-label">Program Studi</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="strata_satu" name="program_studi" value="Strata Satu" class="checkbox-input" required>
+                                    <label for="strata_satu" class="checkbox-label">Strata Satu</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jurusan Dropdown -->
+                        <div class="form-row vertical">
+                            <label class="form-label">Jurusan</label>
+                            <select class="form-select" name="jurusan" required>
+                                <option value="">Pilih Jurusan</option>
+                                <option value="Sistem Informasi (SI)">Sistem Informasi (SI)</option>
+                                <option value="Teknik Informatika (TI)">Teknik Informatika (TI)</option>
+                                <option value="Bisnis Digital (BD)">Bisnis Digital (BD)</option>
+                                <option value="Manajemen Ritel (MR)">Manajemen Ritel (MR)</option>
+                                <option value="Kajian Film (KF)">Kajian Film (KF)</option>
+                            </select>
+                        </div>
+
+                        <!-- Konsentrasi Dropdown -->
+                        <div class="form-row vertical">
+                            <label class="form-label">Konsentrasi</label>
+                            <select class="form-select" name="konsentrasi" required>
+                                <option value="">Pilih Konsentrasi</option>
+                                <option value="SE (Software Engineering)">SE (Software Engineering)</option>
+                                <option value="CIA (Cyber Intelligence & Analytics)">CIA (Cyber Intelligence & Analytics)</option>
+                                <option value="Manajemen (Bitel)">Manajemen (Bitel)</option>
+                                <option value="COM (Computer Network)">COM (Computer Network)</option>
+                                <option value="CN (Computer Network)">CN (Computer Network)</option>
+                                <option value="SIM (Sistem Informasi Manajemen)">SIM (Sistem Informasi Manajemen)</option>
+                            </select>
+                        </div>
+
+                        <!-- Semester Cuti Dropdown -->
+                        <div class="form-row vertical">
+                            <label class="form-label">Mengajukan cuti resmi untuk semester:</label>
+                            <select class="form-select" name="semester_cuti" required>
+                                <option value="">Pilih Semester</option>
+                                <option value="Ganjil">Ganjil</option>
+                                <option value="Genap">Genap</option>
+                            </select>
+                        </div>
+
+                        <!-- Tahun Akademik Dropdown -->
+                        <div class="form-row vertical">
+                            <label class="form-label">Tahun Akademik</label>
+                            <select class="form-select" name="tahun_akademik" required>
+                                <option value="">Pilih Tahun Akademik</option>
+                                <option value="2023/2024">2023/2024</option>
+                                <option value="2024/2025">2024/2025</option>
+                                <option value="2025/2026">2025/2026</option>
+                                <option value="2026/2027">2026/2027</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row vertical">
+                            <label class="form-label">Adapun alasan pengambilan cuti sebagai berikut:</label>
+                            <textarea class="form-textarea" name="alasan_cuti" required placeholder="Tuliskan alasan pengambilan cuti kuliah Anda dengan jelas dan lengkap..."></textarea>
+                        </div>
+
+                        <!-- Declaration Section -->
+                        <div class="declaration-section">
+                            <p class="declaration-text">
+                                Saya telah mengetahui bahwa hal cuti saya akan berkurang untuk membayar biaya maksimal cuti 
+                                yang dipersyaratkan dan berjanji untuk membayar biaya administrasi dilewatkan.
+                            </p>
+                            <p class="declaration-text">
+                                Demikian pengajuan ini saya buat dengan sebenar-benarnya.
+                            </p>
+                        </div>
+
+                        <!-- Signature Section -->
+                        <div class="signature-section">
+                            <div class="signature-left">
+                                <p>Tangerang, <input type="date" class="date-input" name="tanggal_pengajuan"></p>
+                            </div>
+                            <div class="signature-right">
+                                <div class="signature-line"></div>
+                                <p class="signature-name">Nama Jelas</p>
+                            </div>
+                        </div>
+
+                        <!-- Approval Table -->
+                        <div class="approval-section">
+                            <div class="approval-title">
+                                Formulir yang sudah diisi lengkap disahkan oleh: pihak pihak yang bersangkutan.
+                            </div>
+                            <table class="approval-table">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">Catatan Bag. Administrasi Umum</th>
+                                        <th>Catatan Bag. Administrasi Akademik & Kemahasiswaan</th>
+                                        <th>Kepala Program Studi</th>
+                                        <th>Pimpinan Akademik</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Tgl:</td>
+                                        <td>Tgl:</td>
+                                        <td>Tgl:</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="revision-cell" rowspan="2">Revisi: 0</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="approval-note">
+                                <p><strong>Keterangan:</strong> 1. BAU, 2. BAAK, 3. Kaprodi, 4. Ketua</p>
+                            </div>
+                        </div>
+
+                        <!-- Submit Section -->
+                        <div class="submit-section">
+                            <button type="button" class="back-btn" onclick="goBack()">Kembali</button>
+                            <button type="submit" class="submit-btn">Print</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Dropdown Toggle
+        const formulirDropdown = document.getElementById('formulirDropdown');
+        const dropdownToggle = formulirDropdown.querySelector('.dropdown-toggle');
+
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            formulirDropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!formulirDropdown.contains(event.target)) {
+                formulirDropdown.classList.remove('active');
+            }
+            
+            if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Auto-set today's date
+        document.querySelector('input[name="tanggal_pengajuan"]').valueAsDate = new Date();
+
+        // Form validation and submission
+        document.getElementById('cutiKuliahForm').addEventListener('submit', function(e) {
+            // Show loading
+            document.getElementById('loading').style.display = 'flex';
+            
+            // Basic validation
+            const nim = this.nim.value.trim();
+            const nama = this.nama_mahasiswa.value.trim();
+            const semester = this.semester.value.trim();
+            const sks = this.sks_terjangkau.value.trim();
+            const alasan = this.alasan_cuti.value.trim();
+            const programStudi = this.program_studi.checked;
+            const jurusan = this.jurusan.value;
+            const konsentrasi = this.konsentrasi.value;
+            const semesterCuti = this.semester_cuti.value;
+            const tahunAkademik = this.tahun_akademik.value;
+            
+            if (!nim || !nama || !semester || !sks || !alasan || !programStudi || !jurusan || !konsentrasi || !semesterCuti || !tahunAkademik) {
+                e.preventDefault();
+                setTimeout(() => {
+                    document.getElementById('loading').style.display = 'none';
+                    alert('Mohon lengkapi semua field yang wajib diisi!');
+                }, 500);
+                return false;
+            }
+
+            // If validation passes, form will submit to PHP
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                alert('Formulir berhasil dikirim! Tim akademik akan memproses permohonan Anda.');
+            }, 1000);
+        });
+
+        // Go back function
+        function goBack() {
+            if (confirm('Apakah Anda yakin ingin kembali? Data yang telah diisi akan hilang.')) {
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    window.location.href = '../halamanutama.html';
+                }
+            }
+        }
+
+        // Auto-format NIM (only numbers)
+        document.querySelector('input[name="nim"]').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+
+        // Auto-format name (capitalize first letter of each word)
+        document.querySelector('input[name="nama_mahasiswa"]').addEventListener('blur', function(e) {
+            this.value = this.value.replace(/\b\w/g, l => l.toUpperCase());
+        });
+
+        // Auto-format semester (only numbers 1-14)
+        document.querySelector('input[name="semester"]').addEventListener('input', function(e) {
+            let value = parseInt(this.value);
+            if (value > 14) this.value = 14;
+            if (value < 1) this.value = 1;
+        });
+
+        // Auto-format SKS (only numbers 0-24)
+        document.querySelector('input[name="sks_terjangkau"]').addEventListener('input', function(e) {
+            let value = parseInt(this.value);
+            if (value > 24) this.value = 24;
+            if (value < 0) this.value = 0;
+        });
+
+        // Auto-format tahun (only 4 digits) - not needed anymore with dropdown
+
+        // Auto-resize textarea
+        document.querySelector('textarea[name="alasan_cuti"]').addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+        });
+
+        // Update konsentrasi options based on jurusan selection
+        document.querySelector('select[name="jurusan"]').addEventListener('change', function() {
+            const konsentrasiSelect = document.querySelector('select[name="konsentrasi"]');
+            const selectedJurusan = this.value;
+            
+            // Clear current options
+            konsentrasiSelect.innerHTML = '<option value="">Pilih Konsentrasi</option>';
+            
+            // Define konsentrasi options for each jurusan
+            const konsentrasiOptions = {
+                'Sistem Informasi (SI)': [
+                    {value: 'SIM (Sistem Informasi Manajemen)', text: 'SIM (Sistem Informasi Manajemen)'},
+                    {value: 'CIA (Cyber Intelligence & Analytics)', text: 'CIA (Cyber Intelligence & Analytics)'}
+                ],
+                'Teknik Informatika (TI)': [
+                    {value: 'SE (Software Engineering)', text: 'SE (Software Engineering)'},
+                    {value: 'CN (Computer Network)', text: 'CN (Computer Network)'},
+                    {value: 'COM (Computer Network)', text: 'COM (Computer Network)'}
+                ],
+                'Bisnis Digital (BD)': [
+                    {value: 'Manajemen (Bitel)', text: 'Manajemen (Bitel)'}
+                ],
+                'Manajemen Ritel (MR)': [
+                    {value: 'Manajemen (Bitel)', text: 'Manajemen (Bitel)'}
+                ],
+                'Kajian Film (KF)': [
+                    {value: 'SE (Software Engineering)', text: 'SE (Software Engineering)'},
+                    {value: 'CIA (Cyber Intelligence & Analytics)', text: 'CIA (Cyber Intelligence & Analytics)'},
+                    {value: 'Manajemen (Bitel)', text: 'Manajemen (Bitel)'},
+                    {value: 'COM (Computer Network)', text: 'COM (Computer Network)'},
+                    {value: 'CN (Computer Network)', text: 'CN (Computer Network)'},
+                    {value: 'SIM (Sistem Informasi Manajemen)', text: 'SIM (Sistem Informasi Manajemen)'}
+                ]
+            };
+            
+            // Add relevant options based on selected jurusan
+            if (selectedJurusan && konsentrasiOptions[selectedJurusan]) {
+                konsentrasiOptions[selectedJurusan].forEach(option => {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = option.value;
+                    optionElement.textContent = option.text;
+                    konsentrasiSelect.appendChild(optionElement);
+                });
+            }
+        });
+
+        // Input focus animations
+        document.querySelectorAll('.form-input, .form-textarea, .form-select').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.transform = 'scale(1.02)';
+                this.style.boxShadow = '0 5px 15px rgba(52, 152, 219, 0.2)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Initialize form on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default focus to first input
+            document.querySelector('input[name="nim"]').focus();
+            
+            // Add loading animation for better UX
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

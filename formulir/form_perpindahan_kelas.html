@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Perpindahan Kelas</title>
+    <link rel="stylesheet" href="../css/form_perpindahan_kelas.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="page-content">
+        <!-- Fixed Navbar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="../images/logo-global-institute-type3-stroke.png" alt="GITB Logo" class="logo-img">
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="../halamanutama.html" class="nav-item">Beranda</a>
+                    
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown" id="formulirDropdown">
+                        <a href="#" class="dropdown-toggle">
+                            Formulir
+                            <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="form_permohonan_surat.html" class="dropdown-item">Formulir Permohonan Surat</a>
+                            <a href="form_cuti_kuliah.html" class="dropdown-item">Formulir Cuti Kuliah</a>
+                            <a href="form_perpindahan_kelas.html" class="dropdown-item active">Formulir Perpindahan Kelas</a>
+                            <a href="form_perpindahan_konsentrasi.html" class="dropdown-item">Formulir Perpindahan Konsentrasi</a>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="nav-item">Bantuan</a>
+                    <a href="#" class="nav-item">Logout</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <div class="form-card">
+                <!-- Form Header -->
+                <div class="form-header">
+                    <div class="header-content">
+                        <div class="header-text">
+                            <div class="institute-name">FORMULIR PERPINDAHAN KELAS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Body -->
+                <div class="form-body">
+                    <form id="perpindahanKelasForm" method="POST" action="process_perpindahan_kelas.php">
+                        
+                        <!-- Approval Table -->
+                        <div class="approval-section">
+                            <!-- Responsive Table Wrapper -->
+                            <div class="approval-table-wrapper">
+                                <table class="approval-table">
+                                    <thead>
+                                        <tr>
+                                            <th rowspan="2" class="form-column">FORM :</th>
+                                            <th class="approval-column">KA BAAK</th>
+                                            <th class="approval-column">PA Lama<br>(ganjil/genap)</th>
+                                            <th class="approval-column">PA Baru<br>(ganjil/genap)</th>
+                                            <th class="approval-column">KAPRODI</th>
+                                            <th class="approval-column">Finance</th>
+                                            <th class="approval-column">Akademik</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="checkbox-cell">
+                                                <div class="checkbox-cell-content">
+                                                    <input type="checkbox" id="perpindahan_konsentrasi" name="form_type[]" value="Perpindahan Konsentrasi">
+                                                    <label for="perpindahan_konsentrasi" class="checkbox-label">Perpindahan Konsentrasi</label>
+                                                </div>
+                                            </td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="checkbox-cell">
+                                                <div class="checkbox-cell-content">
+                                                    <input type="checkbox" id="perpindahan_kelas" name="form_type[]" value="Perpindahan Kelas" checked>
+                                                    <label for="perpindahan_kelas" class="checkbox-label">Perpindahan Kelas</label>
+                                                </div>
+                                            </td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="checkbox-cell">
+                                                <div class="checkbox-cell-content">
+                                                    <input type="checkbox" id="perpindahan_prodi" name="form_type[]" value="Perpindahan Prodi">
+                                                    <label for="perpindahan_prodi" class="checkbox-label">Perpindahan Prodi</label>
+                                                </div>
+                                            </td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                            <td class="signature-cell">&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Alternative Card Layout for Very Small Screens -->
+                            <div class="approval-cards">
+                                <div class="approval-card">
+                                    <div class="approval-card-header">
+                                        <input type="checkbox" id="perpindahan_konsentrasi_card" name="form_type[]" value="Perpindahan Konsentrasi">
+                                        <span class="approval-card-title">Perpindahan Konsentrasi</span>
+                                    </div>
+                                    <div class="approval-card-body">
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">KA BAAK:</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">PA(ganjil/genap):</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">KAPRODI:</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">Finance:</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">Akademik:</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="approval-card">
+                                    <div class="approval-card-header">
+                                        <input type="checkbox" id="perpindahan_kelas_card" name="form_type[]" value="Perpindahan Kelas" checked>
+                                        <span class="approval-card-title">Perpindahan Kelas</span>
+                                    </div>
+                                    <div class="approval-card-body">
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">KA BAAK:</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">PA(ganjil/genap):</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">KAPRODI:</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">Finance:</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">Akademik:</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="approval-card">
+                                    <div class="approval-card-header">
+                                        <input type="checkbox" id="perpindahan_prodi_card" name="form_type[]" value="Perpindahan Prodi">
+                                        <span class="approval-card-title">Perpindahan Prodi</span>
+                                    </div>
+                                    <div class="approval-card-body">
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">KA BAAK:</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">PA(ganjil/genap):</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">KAPRODI:</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">Finance:</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                        <div class="approval-card-row">
+                                            <span class="approval-card-label">Akademik:</span>
+                                            <span class="approval-card-value">_______</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Student Information -->
+                        <div class="student-info">
+                            <div class="info-text">Saya yang bertanda tangan dibawah ini :</div>
+                            
+                            <div class="form-row">
+                                <label class="form-label">NIM</label>
+                                <span>:</span>
+                                <input type="text" class="form-input" name="nim" required placeholder="Masukkan NIM">
+                            </div>
+
+                            <div class="form-row">
+                                <label class="form-label">Nama Mahasiswa</label>
+                                <span>:</span>
+                                <input type="text" class="form-input" name="nama_mahasiswa" required placeholder="Masukkan nama lengkap">
+                            </div>
+
+                            <div class="form-row">
+                                <label class="form-label">Semester</label>
+                                <span>:</span>
+                                <input type="number" class="form-input" name="semester" min="1" max="14" required placeholder="Semester">
+                            </div>
+
+                            <div class="form-row">
+                                <label class="form-label">Jumlah sks terjangkau</label>
+                                <span>:</span>
+                                <input type="number" class="form-input" name="sks_terjangkau" min="0" max="24" required placeholder="Jumlah SKS">
+                            </div>
+
+                            <div class="form-row">
+                                <label class="form-label">PRODI</label>
+                                <span>:</span>
+                                <select class="form-select" name="prodi" required>
+                                    <option value="">Pilih Program Studi</option>
+                                    <option value="Sistem Informasi">Sistem Informasi</option>
+                                    <option value="Bisnis Digital">Bisnis Digital</option>
+                                    <option value="Teknik Informatika">Teknik Informatika</option>
+                                    <option value="Manajemen Ritel">Manajemen Ritel</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Concentration Section -->
+                        <div class="form-row">
+                            <label class="form-label">Konsentrasi</label>
+                            <span>:</span>
+                            <select class="form-select" name="konsentrasi" required>
+                                <option value="">Pilih Konsentrasi</option>
+                                <option value="Management System">Management System</option>
+                                <option value="Computerized Design & Multimedia">Computerized Design & Multimedia</option>
+                                <option value="Computerized Accounting">Computerized Accounting</option>
+                                <option value="Computer Networking">Computer Networking</option>
+                                <option value="Logistic & Production Information System">Logistic & Production Information System</option>
+                                <option value="Software Engineering">Software Engineering</option>
+                                <option value="Manajemen Bisnis Digital">Manajemen Bisnis Digital</option>
+                                <option value="Manajemen Ritel">Manajemen Ritel</option>
+                            </select>
+                        </div>
+
+                        <!-- Class Change Section -->
+                        <div class="form-row">
+                            <label class="form-label">Mengajukan Pindah Kelas</label>
+                            <span>:</span>
+                            <select class="form-select" name="pindah_kelas" required>
+                                <option value="">Pilih Perpindahan Kelas</option>
+                                <option value="Pagi Ke Malam">Pagi Ke Malam</option>
+                                <option value="Malam Ke Shift">Malam Ke Shift</option>
+                                <option value="Shift Ke JSM">Shift Ke JSM</option>
+                            </select>
+                        </div>
+
+                        <!-- Semester and Academic Year -->
+                        <div class="form-row">
+                            <label class="form-label">Semester</label>
+                            <span>:</span>
+                            <select class="form-select" name="semester_type" required style="flex: 0.3; margin-right: 1rem;">
+                                <option value="">Pilih</option>
+                                <option value="Ganjil">Ganjil</option>
+                                <option value="Genap">Genap</option>
+                            </select>
+                            <label class="form-label" style="min-width: 100px;">Tahun Akademik</label>
+                            <span>:</span>
+                            <select class="form-select" name="tahun_akademik" required>
+                                <option value="">Pilih Tahun Akademik</option>
+                                <option value="2023/2024">2023/2024</option>
+                                <option value="2024/2025">2024/2025</option>
+                                <option value="2025/2026">2025/2026</option>
+                                <option value="2026/2027">2026/2027</option>
+                            </select>
+                        </div>
+
+                        <!-- Reason Section -->
+                        <div class="reason-section">
+                            <div class="reason-title">Adapun alasan perpindahan kelas sebagai berikut:</div>
+                            <textarea class="form-textarea" name="alasan_perpindahan" required placeholder="Tuliskan alasan perpindahan kelas Anda dengan jelas dan lengkap..."></textarea>
+                        </div>
+
+                        <!-- Declaration Section -->
+                        <div class="declaration-section">
+                            <p class="declaration-text">
+                                Adapun segala akibat yang terjadi dengan adanya perpindahan kelas ini sepenuhnya menjadi tanggung 
+                                jawab saya dan saya bersedia menentui segala persyaratan yang berlaku di perguruan tinggi Bina Sarana 
+                                Global.
+                            </p>
+                            <p class="declaration-text">
+                                Demikian pernyataan ini saya buat dengan sebenar-benarnya.
+                            </p>
+                        </div>
+
+                        <!-- Signature Section -->
+                        <div class="signature-section">
+                            <div class="signature-location">
+                                Tangerang, <input type="date" name="tanggal_pengajuan" style="border: none; border-bottom: 1px solid #2c3e50; background: transparent; padding: 0.2rem;">
+                            </div>
+                            <div class="signature-name">( ________________________________ )</div>
+                        </div>
+
+                        <!-- Submit Section -->
+                        <div class="submit-section">
+                            <button type="button" class="back-btn" onclick="goBack()">Kembali</button>
+                            <button type="submit" class="submit-btn">Print</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Dropdown Toggle
+        const formulirDropdown = document.getElementById('formulirDropdown');
+        const dropdownToggle = formulirDropdown.querySelector('.dropdown-toggle');
+
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            formulirDropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!formulirDropdown.contains(event.target)) {
+                formulirDropdown.classList.remove('active');
+            }
+            
+            if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Auto-set today's date
+        document.querySelector('input[name="tanggal_pengajuan"]').valueAsDate = new Date();
+
+        // Form validation and submission
+        document.getElementById('perpindahanKelasForm').addEventListener('submit', function(e) {
+            // Show loading
+            document.getElementById('loading').style.display = 'flex';
+            
+            // Basic validation
+            const nim = this.nim.value.trim();
+            const nama = this.nama_mahasiswa.value.trim();
+            const semester = this.semester.value.trim();
+            const sks = this.sks_terjangkau.value.trim();
+            const alasan = this.alasan_perpindahan.value.trim();
+            const pindahKelas = this.pindah_kelas.value;
+            const semesterType = this.semester_type.value;
+            const tahunAkademik = this.tahun_akademik.value;
+            const prodi = this.prodi.value;
+            const konsentrasi = this.konsentrasi.value;
+            
+            // Check required fields
+            if (!nim || !nama || !semester || !sks || !alasan || !pindahKelas || !semesterType || !tahunAkademik || !prodi || !konsentrasi) {
+                e.preventDefault();
+                setTimeout(() => {
+                    document.getElementById('loading').style.display = 'none';
+                    alert('Mohon lengkapi semua field yang wajib diisi!');
+                }, 500);
+                return false;
+            }
+
+            // If validation passes, form will submit to PHP
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                alert('Formulir berhasil dikirim! Tim akademik akan memproses permohonan Anda.');
+            }, 1000);
+        });
+
+        // Go back function
+        function goBack() {
+            if (confirm('Apakah Anda yakin ingin kembali? Data yang telah diisi akan hilang.')) {
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    window.location.href = '../halamanutama.html';
+                }
+            }
+        }
+
+        // Auto-format NIM (only numbers)
+        document.querySelector('input[name="nim"]').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+
+        // Auto-format name (capitalize first letter of each word)
+        document.querySelector('input[name="nama_mahasiswa"]').addEventListener('blur', function(e) {
+            this.value = this.value.replace(/\b\w/g, l => l.toUpperCase());
+        });
+
+        // Auto-format semester (only numbers 1-14)
+        document.querySelector('input[name="semester"]').addEventListener('input', function(e) {
+            let value = parseInt(this.value);
+            if (value > 14) this.value = 14;
+            if (value < 1) this.value = 1;
+        });
+
+        // Auto-format SKS (only numbers 0-24)
+        document.querySelector('input[name="sks_terjangkau"]').addEventListener('input', function(e) {
+            let value = parseInt(this.value);
+            if (value > 24) this.value = 24;
+            if (value < 0) this.value = 0;
+        });
+
+        // Auto-format tahun akademik (only 4 digits) - not needed with dropdown
+
+        // Update konsentrasi options based on prodi selection
+        document.querySelector('select[name="prodi"]').addEventListener('change', function() {
+            const konsentrasiSelect = document.querySelector('select[name="konsentrasi"]');
+            const selectedProdi = this.value;
+            
+            // Clear current options
+            konsentrasiSelect.innerHTML = '<option value="">Pilih Konsentrasi</option>';
+            
+            // Define konsentrasi options for each prodi
+            const konsentrasiOptions = {
+                'Sistem Informasi': [
+                    {value: 'Management System', text: 'Management System'},
+                    {value: 'Computerized Accounting', text: 'Computerized Accounting'},
+                    {value: 'Logistic & Production Information System', text: 'Logistic & Production Information System'}
+                ],
+                'Teknik Informatika': [
+                    {value: 'Software Engineering', text: 'Software Engineering'},
+                    {value: 'Computer Networking', text: 'Computer Networking'},
+                    {value: 'Computerized Design & Multimedia', text: 'Computerized Design & Multimedia'}
+                ],
+                'Bisnis Digital': [
+                    {value: 'Manajemen Bisnis Digital', text: 'Manajemen Bisnis Digital'}
+                ],
+                'Manajemen Ritel': [
+                    {value: 'Manajemen Ritel', text: 'Manajemen Ritel'}
+                ]
+            };
+            
+            // Add relevant options based on selected prodi
+            if (selectedProdi && konsentrasiOptions[selectedProdi]) {
+                konsentrasiOptions[selectedProdi].forEach(option => {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = option.value;
+                    optionElement.textContent = option.text;
+                    konsentrasiSelect.appendChild(optionElement);
+                });
+            }
+        });
+
+        // Auto-resize textarea
+        document.querySelector('textarea[name="alasan_perpindahan"]').addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+        });
+
+        // Form type checkbox logic - only allow one to be checked
+        document.querySelectorAll('input[name="form_type[]"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    document.querySelectorAll('input[name="form_type[]"]').forEach(cb => {
+                        if (cb !== this) cb.checked = false;
+                    });
+                }
+            });
+        });
+
+        // Input focus animations
+        document.querySelectorAll('.form-input, .form-textarea, .form-select').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.transform = 'translateY(-1px)';
+                this.style.boxShadow = '0 0 0 4px rgba(52, 152, 219, 0.1)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Initialize form on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default focus to first input
+            document.querySelector('input[name="nim"]').focus();
+            
+            // Add loading animation for better UX
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+
+            // Set default checkbox for "Perpindahan Kelas"
+            document.getElementById('perpindahan_kelas').checked = true;
+        });
+    </script>
+</body>
+</html>
