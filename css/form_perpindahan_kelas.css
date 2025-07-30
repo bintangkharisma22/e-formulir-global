@@ -238,11 +238,11 @@ body {
 }
 
 .institute-name {
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-size: 1.2rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .form-title {
@@ -253,7 +253,7 @@ body {
 
 /* Form Body */
 .form-body {
-    padding: 2rem;
+    padding: 2.5rem;
 }
 
 /* ===== UPDATED APPROVAL TABLE SECTION - RESPONSIVE ===== */
@@ -459,12 +459,13 @@ body {
     font-size: 0.95rem;
 }
 
-/* FORM ROW STYLES - VERTICAL LAYOUT */
+/* ===== FORM ROW STYLES - VERTICAL LAYOUT LIKE REFERENCE ===== */
 .form-row {
     display: flex;
     flex-direction: column;
+    gap: 0.8rem;
+    align-items: stretch;
     margin-bottom: 1.5rem;
-    gap: 0.5rem;
 }
 
 /* Remove the colon from all form rows */
@@ -473,100 +474,57 @@ body {
 }
 
 .form-label {
+    display: block;
     font-weight: 600;
     color: #2c3e50;
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
-/* MODERN INPUT STYLES - Fullwidth */
+/* ===== MODERN INPUT STYLES - EXACTLY LIKE REFERENCE ===== */
 .form-input {
     width: 100%;
-    padding: 1rem 1.2rem;
+    padding: 0.8rem;
     border: 2px solid #e0e6ed;
-    border-radius: 12px;
-    font-size: 0.9rem;
+    border-radius: 8px;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    background: #fafbfc;
-    color: #2c3e50;
+    background: white;
 }
 
 .form-input:focus {
     outline: none;
     border-color: #3498db;
-    background: white;
-    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
-    transform: translateY(-1px);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
-.form-input:hover {
-    border-color: #bdc3c7;
-    background: white;
-}
-
-.form-input::placeholder {
-    color: #95a5a6;
-    font-style: italic;
-}
-
-/* Form Select Dropdown Styles - Fullwidth */
+/* ===== FORM SELECT DROPDOWN STYLES - EXACTLY LIKE REFERENCE ===== */
 .form-select {
     width: 100%;
-    padding: 1rem 1.2rem;
+    padding: 0.8rem;
     border: 2px solid #e0e6ed;
-    border-radius: 12px;
-    font-size: 0.9rem;
+    border-radius: 8px;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    background: #fafbfc;
-    color: #2c3e50;
+    background: white;
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233498db' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1.2em;
+    background-position: right 0.8rem center;
+    background-size: 1em;
     padding-right: 3rem;
 }
 
 .form-select:focus {
     outline: none;
     border-color: #3498db;
-    background: white;
-    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
-    transform: translateY(-1px);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
 .form-select:hover {
-    border-color: #bdc3c7;
-    background: white;
-}
-
-/* Special handling for semester and academic year row */
-.semester-academic-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.semester-group,
-.academic-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.semester-group .form-label,
-.academic-group .form-label {
-    font-weight: 600;
-    color: #2c3e50;
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
-}
-
-.semester-group .form-select,
-.academic-group .form-select {
-    width: 100%;
+    border-color: #3498db;
 }
 
 /* Program Studi Section */
@@ -725,6 +683,25 @@ body {
     text-align: center;
 }
 
+/* ===== FORM TEXTAREA STYLING - LIKE REFERENCE ===== */
+.form-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 1rem;
+    border: 2px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+.form-textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
 /* Reason Section */
 .reason-section {
     margin: 2rem 0;
@@ -735,26 +712,6 @@ body {
     color: #2c3e50;
     margin-bottom: 1rem;
     font-size: 0.95rem;
-}
-
-.form-textarea {
-    width: 100%;
-    min-height: 100px;
-    padding: 1rem;
-    border: 2px solid #e0e6ed;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-family: inherit;
-    resize: vertical;
-    transition: all 0.3s ease;
-    background: #fafbfc;
-}
-
-.form-textarea:focus {
-    outline: none;
-    border-color: #3498db;
-    background: white;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
 /* Declaration Section */
@@ -1069,12 +1026,6 @@ body {
 
     .form-title {
         font-size: 0.85rem;
-    }
-
-    /* Keep the vertical layout on mobile as well */
-    .semester-academic-row {
-        grid-template-columns: 1fr;
-        gap: 1rem;
     }
 
     .signature-section {

@@ -242,16 +242,16 @@ body {
 }
 
 .institute-name {
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
 }
 
 /* Form Body */
 .form-body {
-    padding: 2rem;
+    padding: 2.5rem;
 }
 
 /* ===== APPROVAL SECTION - RESPONSIVE TABLE + CARDS ===== */
@@ -456,14 +456,15 @@ body {
     font-size: 0.95rem;
 }
 
-/* FORM ROW STYLES - VERTICAL LAYOUT */
+/* ===== FORM ROW STYLES - VERTICAL LAYOUT LIKE REFERENCE ===== */
 .form-row {
     display: flex;
-    flex-direction: column;
+    gap: 2rem;
+    align-items: start;
     margin-bottom: 1.5rem;
-    gap: 0.5rem;
 }
 
+/* Vertical layout for dropdown and input fields - EXACTLY LIKE REFERENCE */
 .form-row.vertical {
     flex-direction: column;
     gap: 0.8rem;
@@ -471,12 +472,15 @@ body {
 }
 
 .form-label {
-    font-weight: 600;
+    display: block;
+    font-weight: 500;
     color: #2c3e50;
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
+    min-width: 150px;
+    flex-shrink: 0;
 }
 
+/* Label styling for vertical layout - EXACTLY LIKE REFERENCE */
 .form-row.vertical .form-label {
     min-width: auto;
     margin-bottom: 0.8rem;
@@ -484,66 +488,72 @@ body {
     font-weight: 600;
 }
 
-/* MODERN INPUT STYLES - Fullwidth */
+/* ===== FORM INPUT STYLING - EXACTLY LIKE REFERENCE ===== */
 .form-input {
-    width: 100%;
-    padding: 1rem 1.2rem;
-    border: 2px solid #e0e6ed;
-    border-radius: 12px;
-    font-size: 0.9rem;
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-bottom: 2px solid #e0e6ed;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    background: #fafbfc;
-    color: #2c3e50;
+    background: transparent;
 }
 
 .form-input:focus {
     outline: none;
-    border-color: #3498db;
-    background: white;
-    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
-    transform: translateY(-1px);
+    border-bottom-color: #3498db;
+    background: #f8f9fa;
+    border-radius: 4px 4px 0 0;
 }
 
-.form-input:hover {
-    border-color: #bdc3c7;
-    background: white;
-}
-
-.form-input::placeholder {
-    color: #95a5a6;
-    font-style: italic;
-}
-
-/* Form Select Dropdown Styles - Fullwidth */
-.form-select {
+/* Form input styling for vertical layout - EXACTLY LIKE REFERENCE */
+.form-row.vertical .form-input {
     width: 100%;
-    padding: 1rem 1.2rem;
+    padding: 0.8rem;
     border: 2px solid #e0e6ed;
-    border-radius: 12px;
+    border-radius: 8px;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background: #fafbfc;
-    color: #2c3e50;
+    background: white;
+}
+
+.form-row.vertical .form-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* ===== FORM SELECT DROPDOWN STYLES - EXACTLY LIKE REFERENCE ===== */
+.form-select {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233498db' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1.2em;
+    background-position: right 0.8rem center;
+    background-size: 1em;
     padding-right: 3rem;
+}
+
+/* Full width for vertical layout - EXACTLY LIKE REFERENCE */
+.form-row.vertical .form-select {
+    width: 100%;
 }
 
 .form-select:focus {
     outline: none;
     border-color: #3498db;
-    background: white;
-    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
-    transform: translateY(-1px);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
 .form-select:hover {
-    border-color: #bdc3c7;
-    background: white;
+    border-color: #3498db;
 }
 
 /* Special handling for semester and academic year row */
@@ -565,142 +575,57 @@ body {
 .academic-group .form-label {
     font-weight: 600;
     color: #2c3e50;
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .semester-group .form-select,
 .academic-group .form-select {
     width: 100%;
-}
-
-/* ===== UPDATED PRODI DROPDOWN STYLING - SESUAI REFERENSI ===== */
-
-.prodi-dropdown-container {
-    width: 100%;
-    margin-top: 0.5rem;
-}
-
-.prodi-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    width: 100%;
-}
-
-.prodi-option {
-    position: relative;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    padding: 0.875rem 1rem;
+    padding: 0.8rem;
+    border: 2px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
     background: white;
-    transition: all 0.2s ease;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    min-height: 50px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 1em;
+    padding-right: 3rem;
 }
 
-.prodi-option:hover {
-    border-color: #9ca3af;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+.semester-group .form-select:focus,
+.academic-group .form-select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
-.prodi-option input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: #2563eb;
-    cursor: pointer;
-    flex-shrink: 0;
-    border: 1px solid #d1d5db;
-    border-radius: 2px;
+.semester-group .form-select:hover,
+.academic-group .form-select:hover {
+    border-color: #3498db;
 }
 
-.prodi-option input[type="checkbox"]:checked {
-    background-color: #2563eb;
-    border-color: #2563eb;
+/* ===== FORM TEXTAREA STYLING - EXACTLY LIKE REFERENCE ===== */
+.form-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 1rem;
+    border: 2px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    transition: all 0.3s ease;
 }
 
-.prodi-option label {
-    font-size: 0.875rem;
-    color: #374151;
-    cursor: pointer;
-    line-height: 1.3;
-    user-select: none;
-    flex: 1;
-    font-weight: 400;
-}
-
-/* Selected state - match reference styling */
-.prodi-option:has(input:checked) {
-    border-color: #2563eb;
-    background: #f8fafc;
-}
-
-.prodi-option:has(input:checked) label {
-    color: #1e40af;
-    font-weight: 500;
-}
-
-/* Focus states */
-.prodi-option input[type="checkbox"]:focus {
-    outline: 2px solid #3b82f6;
-    outline-offset: 1px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .prodi-grid {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-    }
-    
-    .prodi-option {
-        padding: 0.75rem;
-        min-height: 45px;
-    }
-    
-    .prodi-option label {
-        font-size: 0.85rem;
-    }
-    
-    .prodi-option input[type="checkbox"] {
-        width: 15px;
-        height: 15px;
-    }
-}
-
-@media (max-width: 576px) {
-    .prodi-option {
-        padding: 0.625rem;
-        min-height: 42px;
-        gap: 0.5rem;
-    }
-    
-    .prodi-option label {
-        font-size: 0.8rem;
-        line-height: 1.2;
-    }
-    
-    .prodi-option input[type="checkbox"] {
-        width: 14px;
-        height: 14px;
-    }
-}
-
-/* Disabled state (if needed) */
-.prodi-option.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    background: #f9fafb;
-    border-color: #e5e7eb;
-}
-
-.prodi-option.disabled:hover {
-    border-color: #e5e7eb;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+.form-textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
 /* Reason Section */
@@ -713,26 +638,6 @@ body {
     color: #2c3e50;
     margin-bottom: 1rem;
     font-size: 0.95rem;
-}
-
-.form-textarea {
-    width: 100%;
-    min-height: 100px;
-    padding: 1rem;
-    border: 2px solid #e0e6ed;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-family: inherit;
-    resize: vertical;
-    transition: all 0.3s ease;
-    background: #fafbfc;
-}
-
-.form-textarea:focus {
-    outline: none;
-    border-color: #3498db;
-    background: white;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
 /* Declaration Section */
@@ -1039,6 +944,17 @@ body {
         line-height: 1.3;
     }
 
+    /* Mobile: all form rows become vertical */
+    .form-row,
+    .form-row.vertical {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form-label {
+        min-width: auto;
+    }
+
     /* Keep the vertical layout on mobile as well */
     .semester-academic-row {
         grid-template-columns: 1fr;
@@ -1284,17 +1200,5 @@ body {
     .approval-column,
     .signature-cell {
         width: calc((100% - 140px) / 5);
-    }
-
-    .prodi-option {
-        border: 1px solid #000 !important;
-        background: white !important;
-        box-shadow: none !important;
-        break-inside: avoid;
-    }
-    
-    .prodi-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
     }
 }
